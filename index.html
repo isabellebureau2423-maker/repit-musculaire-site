@@ -381,7 +381,7 @@
     {id:'p3', name:'Savon Eucalyptus &amp; Romarin', tag:'Jambes lourdes', price:13.50, benefit:"Stimule la circulation, idéal en fin de journée debout ou après la course."},
     {id:'p4', name:'Baume Chaud Gingembre &amp; Poivre', tag:'Articulations', price:18.00, benefit:"Chaleur profonde pour les articulations raides, hanches et genoux."},
     {id:'p5', name:'Baume Froid Menthol &amp; Camphre', tag:'Inflammation', price:18.00, benefit:"Effet glaçant pour calmer une zone chaude ou récemment sollicitée."},
-    {id:'p6', name:'Savon Sel d\\'Épsom &amp; Genévrier', tag:'Récupération sportive', price:15.00, benefit:"Pensé pour les jambes et le dos après l'entraînement."},
+    {id:'p6', name:'Savon Sel d’Épsom &amp; Genévrier', tag:'Récupération sportive', price:15.00, benefit:"Pensé pour les jambes et le dos après l'entraînement."},
     {id:'p7', name:'Huile de massage Arnica', tag:'Zones sensibles', price:22.00, benefit:"Texture glissante pour l'auto-massage des zones sensibles ou noueuses."},
     {id:'p8', name:'Savon Curcuma &amp; Bois de Santal', tag:'Tension musculaire', price:14.00, benefit:"Un geste chaud et enveloppant pour relâcher une tension tenace."},
     {id:'p9', name:'Baume Nuque &amp; Épaules', tag:'Écrans &amp; posture', price:17.50, benefit:"Formulé pour la raideur causée par de longues heures à l'écran."}
@@ -418,7 +418,7 @@
       product:'Savon Arnica &amp; Lavande', productNote:"Utile en douche après une séance d'assouplissement des hanches."
     },
     {
-      id:'jambes', label:'Jambes & mollets', sub:'Jambes lourdes en fin de journée ou après l\\'effort physique.',
+      id:'jambes', label:'Jambes & mollets', sub:'Jambes lourdes en fin de journée ou après l’effort physique.',
       tips:[
         "Étirement du mollet contre un mur, jambe arrière tendue, 30 secondes par côté.",
         "Rouleau de massage sur les mollets et l'arrière des cuisses, mouvements lents vers le haut.",
@@ -434,7 +434,7 @@
         "Étirer les orteils vers soi à la main, 15 à 20 secondes.",
         "Alterner brièvement eau chaude et eau fraîche pour stimuler la circulation."
       ],
-      product:'Savon Sel d\\'Épsom &amp; Genévrier', productNote:"En bain de pieds le soir, après une journée debout."
+      product:'Savon Sel d’Épsom &amp; Genévrier', productNote:"En bain de pieds le soir, après une journée debout."
     },
     {
       id:'mains', label:'Mains & avant-bras', sub:'Tension liée au clavier, à la souris ou aux tâches répétitives.',
@@ -514,7 +514,7 @@
     const itemsEl = document.getElementById('drawerItems');
     const ids = Object.keys(cart);
     if(ids.length===0){
-      itemsEl.innerHTML = '<div class="drawer-empty">Votre panier est vide pour l\\'instant.</div>';
+      itemsEl.innerHTML = '<div class="drawer-empty">Votre panier est vide pour l’instant.</div>';
     } else {
       itemsEl.innerHTML = ids.map(id=>{
         const p = products.find(pr=>pr.id===id);
