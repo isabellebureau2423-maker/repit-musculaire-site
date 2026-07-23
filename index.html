@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Répit Musculaire — Savons &amp; soins naturels pour muscles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#EAE2D3;
+    --paper:#F7F2E6;
+    --ink:#2B2620;
+    --ink-soft:#5A5246;
+    --pine:#3F5A44;
+    --pine-deep:#28372C;
+    --ochre:#B8863B;
+    --ochre-deep:#8F6A2E;
+    --menthol:#B9D3BC;
+    --line: rgba(43,38,32,0.16);
+    --radius: 2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Karla',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Spectral',serif;
+    font-weight:500;
+    letter-spacing:0.01em;
+    margin:0;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ochre-deep);
+  }
+  a{color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(234,226,211,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 0;
+  }
+  .wordmark{
+    font-family:'Spectral',serif;font-style:italic;font-weight:500;
+    font-size:1.5rem;color:var(--pine-deep);
+    display:flex;align-items:baseline;gap:8px;
+  }
+  .wordmark small{
+    font-family:'IBM Plex Mono',monospace;font-style:normal;
+    font-size:0.6rem;letter-spacing:0.12em;color:var(--ochre-deep);
+    text-transform:uppercase;
+  }
+  nav.links{display:flex;gap:32px;align-items:center;}
+  nav.links a{
+    font-size:0.92rem;text-decoration:none;color:var(--ink-soft);
+    position:relative;padding-bottom:4px;
+  }
+  nav.links a:hover{color:var(--pine-deep);}
+  .cart-btn{
+    display:flex;align-items:center;gap:8px;
+    background:var(--pine-deep);color:var(--paper);
+    border:none;border-radius:var(--radius);
+    padding:10px 16px;font-size:0.85rem;letter-spacing:0.02em;
+  }
+  .cart-btn:hover{background:var(--pine);}
+  .cart-count{
+    background:var(--ochre);color:var(--pine-deep);
+    border-radius:50%;min-width:19px;height:19px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.68rem;
+    display:flex;align-items:center;justify-content:center;padding:0 4px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;
+    align-items:center;padding:88px 0 96px;
+  }
+  .hero h1{font-size:3rem;line-height:1.12;margin:18px 0 22px;color:var(--pine-deep);}
+  .hero h1 em{font-style:italic;color:var(--ochre-deep);}
+  .hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:46ch;margin-bottom:34px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--pine-deep);color:var(--paper);border:none;
+    padding:14px 26px;font-size:0.95rem;border-radius:var(--radius);
+  }
+  .btn-primary:hover{background:var(--pine);}
+  .btn-ghost{
+    background:transparent;border:1px solid var(--ink);color:var(--ink);
+    padding:14px 26px;font-size:0.95rem;border-radius:var(--radius);
+    text-decoration:none;
+  }
+  .btn-ghost:hover{border-color:var(--pine-deep);color:var(--pine-deep);}
+
+  /* specimen plate signature element */
+  .specimen-plate{
+    background:var(--paper);border:1px solid var(--line);
+    padding:28px 26px 24px;position:relative;
+  }
+  .specimen-plate::before{
+    content:'';position:absolute;inset:8px;border:1px solid var(--line);
+    pointer-events:none;
+  }
+  .specimen-plate .eyebrow{display:flex;justify-content:space-between;margin-bottom:18px;}
+  .specimen-plate svg{width:100%;height:auto;display:block;margin:6px 0 16px;}
+  .specimen-caption{font-family:'Spectral',serif;font-style:italic;color:var(--ink-soft);font-size:0.95rem;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:80px 0;}
+  section.alt{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:2.1rem;color:var(--pine-deep);margin-top:10px;}
+  .section-head p{color:var(--ink-soft);margin-top:14px;}
+
+  /* ---------- PRODUCT GRID ---------- */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .product-card{
+    background:var(--paper);border:1px solid var(--line);
+    display:flex;flex-direction:column;
+  }
+  .product-media{
+    aspect-ratio:4/3;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(155deg,#EFE8D8,#E4DAC4);
+  }
+  .product-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
+  .product-tag{font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ochre-deep);margin-bottom:8px;}
+  .product-body h3{font-size:1.18rem;color:var(--pine-deep);margin-bottom:6px;}
+  .product-body .benefit{color:var(--ink-soft);font-size:0.9rem;margin-bottom:16px;flex:1;}
+  .product-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--line);}
+  .price{font-family:'IBM Plex Mono',monospace;font-size:0.95rem;color:var(--ink);}
+  .add-btn{
+    background:transparent;border:1px solid var(--pine-deep);color:var(--pine-deep);
+    padding:9px 14px;font-size:0.8rem;border-radius:var(--radius);
+  }
+  .add-btn:hover{background:var(--pine-deep);color:var(--paper);}
+  .add-btn.added{background:var(--ochre);border-color:var(--ochre);color:var(--pine-deep);}
+
+  /* ---------- CONSEILS ---------- */
+  .zone-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
+  .zone-tab{
+    background:transparent;border:1px solid var(--line);color:var(--ink-soft);
+    padding:10px 18px;font-size:0.86rem;border-radius:20px;
+  }
+  .zone-tab.active{background:var(--pine-deep);border-color:var(--pine-deep);color:var(--paper);}
+  .zone-panel{display:none;grid-template-columns:1fr 1fr;gap:48px;}
+  .zone-panel.active{display:grid;}
+  .zone-panel h3{font-size:1.5rem;color:var(--pine-deep);margin-bottom:6px;}
+  .zone-sub{color:var(--ink-soft);font-size:0.92rem;margin-bottom:22px;}
+  .tip-list{list-style:none;padding:0;margin:0;}
+  .tip-list li{
+    display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);
+  }
+  .tip-num{
+    font-family:'IBM Plex Mono',monospace;color:var(--ochre-deep);font-size:0.85rem;
+    flex-shrink:0;padding-top:2px;
+  }
+  .zone-reco{
+    background:var(--paper);border:1px solid var(--line);padding:22px;align-self:start;
+  }
+  .zone-reco .eyebrow{margin-bottom:10px;}
+  .zone-reco h4{font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--pine-deep);margin-bottom:8px;}
+  .zone-reco p{font-size:0.88rem;color:var(--ink-soft);}
+  .caution{
+    margin-top:44px;padding:18px 22px;border-left:3px solid var(--ochre);
+    background:var(--paper);font-size:0.86rem;color:var(--ink-soft);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+  .about p{color:var(--ink-soft);margin-top:16px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--pine-deep);color:var(--paper);padding:56px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  footer .wordmark{color:var(--paper);}
+  footer .wordmark small{color:var(--menthol);}
+  footer h4{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--menthol);margin-bottom:14px;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer li{margin-bottom:10px;font-size:0.9rem;color:#D8DED9;}
+  .foot-bottom{border-top:1px solid rgba(247,242,230,0.15);padding-top:22px;font-size:0.78rem;color:#9FB0A2;font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- CART DRAWER ---------- */
+  .overlay{position:fixed;inset:0;background:rgba(43,38,32,0.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:90;}
+  .overlay.open{opacity:1;pointer-events:auto;}
+  .drawer{
+    position:fixed;top:0;right:0;height:100%;width:380px;max-width:88vw;
+    background:var(--paper);z-index:100;transform:translateX(100%);
+    transition:transform .3s ease;display:flex;flex-direction:column;
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer-head{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+  .drawer-head h3{font-size:1.2rem;color:var(--pine-deep);}
+  .drawer-close{background:none;border:none;font-size:1.3rem;color:var(--ink-soft);}
+  .drawer-items{flex:1;overflow-y:auto;padding:12px 24px;}
+  .drawer-item{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:0.92rem;}
+  .drawer-item .name{font-weight:500;}
+  .drawer-item .meta{color:var(--ink-soft);font-size:0.82rem;}
+  .drawer-item button{background:none;border:none;color:var(--ochre-deep);font-size:0.78rem;text-decoration:underline;padding:0;margin-top:4px;}
+  .drawer-empty{color:var(--ink-soft);font-size:0.9rem;padding:20px 0;}
+  .drawer-foot{padding:22px 24px;border-top:1px solid var(--line);}
+  .drawer-total{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;margin-bottom:16px;font-size:1rem;}
+  .checkout-btn{width:100%;background:var(--pine-deep);color:var(--paper);border:none;padding:15px;border-radius:var(--radius);font-size:0.95rem;}
+  .checkout-btn:hover{background:var(--pine);}
+  .checkout-note{font-size:0.72rem;color:var(--ink-soft);margin-top:10px;text-align:center;}
+
+  @media (max-width:880px){
+    .hero, .about{grid-template-columns:1fr;}
+    .hero{padding:56px 0 64px;gap:40px;}
+    .hero h1{font-size:2.2rem;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .zone-panel.active{display:flex;flex-direction:column;}
+    nav.links{display:none;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <div class="wordmark">Répit Musculaire <small>Savons &amp; soins</small></div>
+    <nav class="links">
+      <a href="#boutique">Boutique</a>
+      <a href="#conseils">Conseils</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openDrawer()">
+      Panier <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Savons &amp; baumes faits main</div>
+      <h1>Le repos que vos <em>muscles</em><br>attendaient.</h1>
+      <p class="lead">Des savons et baumes formulés à partir de plantes reconnues pour soulager la tension musculaire — gaulthérie, arnica, eucalyptus — pensés par une professionnelle du soulagement de la douleur.</p>
+      <div class="cta-row">
+        <a href="#boutique" class="btn-primary" style="text-decoration:none;display:inline-block;">Voir la boutique</a>
+        <a href="#conseils" class="btn-ghost">Conseils par zone</a>
+      </div>
+    </div>
+    <div class="specimen-plate">
+      <div class="eyebrow"><span>Fiche spécimen</span><span>N° 01</span></div>
+      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="200" height="120" rx="6" fill="#EDE3CB" stroke="#2B2620" stroke-width="1.2"/>
+        <path d="M60 100 Q160 80 260 100" stroke="#8F6A2E" stroke-width="1" fill="none" opacity="0.5"/>
+        <path d="M100 40 C95 20 110 8 118 22 C126 8 141 20 136 40 Z" fill="#3F5A44"/>
+        <path d="M180 40 C175 20 190 8 198 22 C206 8 221 20 216 40 Z" fill="#3F5A44"/>
+        <circle cx="130" cy="95" r="3" fill="#B8863B"/>
+        <circle cx="150" cy="110" r="3" fill="#B8863B"/>
+        <circle cx="175" cy="90" r="3" fill="#B8863B"/>
+        <circle cx="195" cy="115" r="3" fill="#B8863B"/>
+        <line x1="60" y1="170" x2="260" y2="170" stroke="#2B2620" stroke-width="0.6"/>
+        <line x1="60" y1="180" x2="260" y2="180" stroke="#2B2620" stroke-width="0.6"/>
+      </svg>
+      <div class="specimen-caption">Gaulthérie couchée — effraîchissante, anti-tension</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOUTIQUE ================= -->
+<section id="boutique" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Boutique</div>
+      <h2>Chaque pièce, une intention.</h2>
+      <p>Neuf savons et baumes, chacun composé pour une zone ou un besoin précis. Fabriqués en petits lots.</p>
+    </div>
+    <div class="grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ================= CONSEILS ================= -->
+<section id="conseils">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Conseils</div>
+      <h2>Soulager la douleur, zone par zone.</h2>
+      <p>Des gestes simples à faire chez soi, en complément de nos soins — et à quel moment consulter.</p>
+    </div>
+    <div class="zone-tabs" id="zoneTabs"></div>
+    <div id="zonePanels"></div>
+    <div class="caution">Ces conseils sont généraux et ne remplacent pas l'avis d'un professionnel de la santé. Si la douleur est intense, persiste au-delà de quelques semaines, ou s'accompagne d'engourdissement, de fièvre ou d'une perte de force, consultez un professionnel.</div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="alt" id="apropos">
+  <div class="wrap about">
+    <div class="specimen-plate">
+      <div class="eyebrow"><span>Fiche spécimen</span><span>N° 00</span></div>
+      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+        <rect x="70" y="30" width="180" height="150" rx="4" fill="#EDE3CB" stroke="#2B2620" stroke-width="1.2"/>
+        <path d="M100 150 C100 100 140 70 160 70 C180 70 220 100 220 150" stroke="#3F5A44" stroke-width="2" fill="none"/>
+        <path d="M160 70 L160 150" stroke="#3F5A44" stroke-width="1"/>
+        <circle cx="160" cy="60" r="8" fill="#3F5A44"/>
+      </svg>
+      <div class="specimen-caption">Formulée à la main, un lot à la fois</div>
+    </div>
+    <div>
+      <div class="eyebrow">À propos</div>
+      <h2 style="font-size:2rem;color:var(--pine-deep);margin-top:10px;">Une approche de terrain, pas de laboratoire.</h2>
+      <p>Répit Musculaire est né du travail quotidien d'une massothérapeute et kinésiologue du sport, à force de voir les mêmes tensions revenir : nuque raide après une journée d'écran, mollets durs après la course, bas du dos qui tire en fin de journée.</p>
+      <p>Chaque savon et chaque baume est formulé pour prolonger, à la maison, ce qu'on ressent après une bonne séance : la chaleur qui détend, le geste qui relâche.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="wordmark">Répit Musculaire</div>
+        <p style="color:#C7CFC8;font-size:0.88rem;margin-top:14px;max-width:34ch;">Savons et baumes faits main pour soulager la tension musculaire, formulés à partir d'ingrédients naturels.</p>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="#boutique">Tous les produits</a></li>
+          <li><a href="#conseils">Conseils par zone</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>bonjour@repitmusculaire.com</li>
+          <li>Expédition partout au Québec</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Répit Musculaire — nom de marque provisoire</div>
+  </div>
+</footer>
+
+<!-- ================= CART DRAWER ================= -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head">
+    <h3>Votre panier</h3>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot">
+    <div class="drawer-total"><span>Total</span><span id="drawerTotal">0,00 $</span></div>
+    <button class="checkout-btn" onclick="checkout()">Passer à la caisse</button>
+    <div class="checkout-note">Paiement sécurisé par Stripe — carte requise à l'étape suivante.</div>
+  </div>
+</div>
+
+<script>
+  const products = [
+    {id:'p1', name:'Savon Gaulthérie &amp; Menthol', tag:'Dos · Épaules', price:14.50, benefit:"Effet rafraîchissant immédiat sur les tensions du haut du dos et de la nuque."},
+    {id:'p2', name:'Savon Arnica &amp; Lavande', tag:'Courbatures générales', price:13.00, benefit:"Apaise les courbatures diffuses après une longue journée ou un effort inhabituel."},
+    {id:'p3', name:'Savon Eucalyptus &amp; Romarin', tag:'Jambes lourdes', price:13.50, benefit:"Stimule la circulation, idéal en fin de journée debout ou après la course."},
+    {id:'p4', name:'Baume Chaud Gingembre &amp; Poivre', tag:'Articulations', price:18.00, benefit:"Chaleur profonde pour les articulations raides, hanches et genoux."},
+    {id:'p5', name:'Baume Froid Menthol &amp; Camphre', tag:'Inflammation', price:18.00, benefit:"Effet glaçant pour calmer une zone chaude ou récemment sollicitée."},
+    {id:'p6', name:'Savon Sel d\\'Épsom &amp; Genévrier', tag:'Récupération sportive', price:15.00, benefit:"Pensé pour les jambes et le dos après l'entraînement."},
+    {id:'p7', name:'Huile de massage Arnica', tag:'Zones sensibles', price:22.00, benefit:"Texture glissante pour l'auto-massage des zones sensibles ou noueuses."},
+    {id:'p8', name:'Savon Curcuma &amp; Bois de Santal', tag:'Tension musculaire', price:14.00, benefit:"Un geste chaud et enveloppant pour relâcher une tension tenace."},
+    {id:'p9', name:'Baume Nuque &amp; Épaules', tag:'Écrans &amp; posture', price:17.50, benefit:"Formulé pour la raideur causée par de longues heures à l'écran."}
+  ];
+
+  const zones = [
+    {
+      id:'nuque', label:'Nuque & épaules', sub:'Tension liée aux écrans, au stress ou à une mauvaise posture assise.',
+      tips:[
+        "Rouler lentement les épaules vers l'arrière, 10 répétitions, en expirant à chaque descente.",
+        "Masser la base du crâne avec les pouces, petits cercles, pendant environ une minute.",
+        "Pencher la tête vers une épaule et retenir 20 secondes de chaque côté, sans forcer.",
+        "Éviter de coincer le téléphone entre l'oreille et l'épaule — répartir le poids autrement."
+      ],
+      product:'Savon Gaulthérie &amp; Menthol', productNote:"Sa fraîcheur aide à relâcher la nuque juste avant les étirements."
+    },
+    {
+      id:'dos', label:'Dos', sub:'Raideur du haut du dos et tiraillement dans le bas du dos en fin de journée.',
+      tips:[
+        "Balle de massage contre un mur, sous chaque omoplate, 30 secondes par point.",
+        "Étirement chat-vache à quatre pattes, 8 à 10 répétitions lentes.",
+        "Appliquer un baume chaud avant l'étirement pour assouplir les tissus.",
+        "Éviter les torsions brusques du tronc quand les muscles sont encore froids."
+      ],
+      product:'Baume Chaud Gingembre &amp; Poivre', productNote:"À masser en cercles sur le bas du dos avant l'étirement du matin."
+    },
+    {
+      id:'hanches', label:'Hanches & fessiers', sub:'Fréquent après de longues heures assises ou un effort de course.',
+      tips:[
+        "Étirement du pigeon assis, 30 secondes de chaque côté.",
+        "Rouler une balle sous les fessiers en position assise, mouvements lents.",
+        "Marcher quelques minutes après une longue période assise pour relancer la zone."
+      ],
+      product:'Savon Arnica &amp; Lavande', productNote:"Utile en douche après une séance d'assouplissement des hanches."
+    },
+    {
+      id:'jambes', label:'Jambes & mollets', sub:'Jambes lourdes en fin de journée ou après l\\'effort physique.',
+      tips:[
+        "Étirement du mollet contre un mur, jambe arrière tendue, 30 secondes par côté.",
+        "Rouleau de massage sur les mollets et l'arrière des cuisses, mouvements lents vers le haut.",
+        "Surélever les jambes contre un mur 5 à 10 minutes en soirée pour la circulation.",
+        "Bain de pieds tiède additionné de sel d'Epsom après un effort important."
+      ],
+      product:'Savon Eucalyptus &amp; Romarin', productNote:"Formulé pour stimuler la circulation dans les jambes fatiguées."
+    },
+    {
+      id:'pieds', label:'Pieds', sub:'Voûte plantaire tendue, souvent liée à la station debout prolongée.',
+      tips:[
+        "Rouler une balle sous la voûte plantaire, assis, 1 à 2 minutes par pied.",
+        "Étirer les orteils vers soi à la main, 15 à 20 secondes.",
+        "Alterner brièvement eau chaude et eau fraîche pour stimuler la circulation."
+      ],
+      product:'Savon Sel d\\'Épsom &amp; Genévrier', productNote:"En bain de pieds le soir, après une journée debout."
+    },
+    {
+      id:'mains', label:'Mains & avant-bras', sub:'Tension liée au clavier, à la souris ou aux tâches répétitives.',
+      tips:[
+        "Étirer le poignet vers le bas puis vers le haut, 15 secondes par position.",
+        "Masser la paume avec le pouce de l'autre main, en petits cercles.",
+        "Faire une pause toutes les heures lors de tâches répétitives prolongées."
+      ],
+      product:'Huile de massage Arnica', productNote:"Idéale pour un massage rapide des avant-bras en fin de journée."
+    }
+  ];
+
+  let cart = {}; // {id: qty}
+
+  function renderProducts(){
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = products.map(p => `
+      <div class="product-card">
+        <div class="product-media"></div>
+        <div class="product-body">
+          <div class="product-tag">${p.tag}</div>
+          <h3>${p.name}</h3>
+          <div class="benefit">${p.benefit}</div>
+          <div class="product-foot">
+            <span class="price">${p.price.toFixed(2)} $</span>
+            <button class="add-btn" id="btn-${p.id}" onclick="addToCart('${p.id}')">Ajouter</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderZones(){
+    const tabsEl = document.getElementById('zoneTabs');
+    const panelsEl = document.getElementById('zonePanels');
+    tabsEl.innerHTML = zones.map((z,i) => `<button class="zone-tab ${i===0?'active':''}" data-zone="${z.id}" onclick="showZone('${z.id}')">${z.label}</button>`).join('');
+    panelsEl.innerHTML = zones.map((z,i) => `
+      <div class="zone-panel ${i===0?'active':''}" id="panel-${z.id}">
+        <div>
+          <h3>${z.label}</h3>
+          <div class="zone-sub">${z.sub}</div>
+          <ul class="tip-list">
+            ${z.tips.map((t,idx)=>`<li><span class="tip-num">${String(idx+1).padStart(2,'0')}</span><span>${t}</span></li>`).join('')}
+          </ul>
+        </div>
+        <div class="zone-reco">
+          <div class="eyebrow">Soin recommandé</div>
+          <h4>${z.product}</h4>
+          <p>${z.productNote}</p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function showZone(id){
+    document.querySelectorAll('.zone-tab').forEach(b=>b.classList.toggle('active', b.dataset.zone===id));
+    document.querySelectorAll('.zone-panel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+id));
+  }
+
+  function addToCart(id){
+    cart[id] = (cart[id]||0) + 1;
+    const btn = document.getElementById('btn-'+id);
+    btn.textContent = 'Ajouté ✓';
+    btn.classList.add('added');
+    setTimeout(()=>{btn.textContent='Ajouter';btn.classList.remove('added');}, 1200);
+    updateCartUI();
+  }
+
+  function removeFromCart(id){
+    delete cart[id];
+    updateCartUI();
+  }
+
+  function updateCartUI(){
+    const count = Object.values(cart).reduce((a,b)=>a+b,0);
+    document.getElementById('cartCount').textContent = count;
+    const itemsEl = document.getElementById('drawerItems');
+    const ids = Object.keys(cart);
+    if(ids.length===0){
+      itemsEl.innerHTML = '<div class="drawer-empty">Votre panier est vide pour l\\'instant.</div>';
+    } else {
+      itemsEl.innerHTML = ids.map(id=>{
+        const p = products.find(pr=>pr.id===id);
+        const qty = cart[id];
+        return `<div class="drawer-item">
+          <div><div class="name">${p.name}</div><div class="meta">Qté ${qty} · ${p.price.toFixed(2)} $ / unité</div>
+          <button onclick="removeFromCart('${id}')">Retirer</button></div>
+          <div>${(p.price*qty).toFixed(2)} $</div>
+        </div>`;
+      }).join('');
+    }
+    const total = ids.reduce((sum,id)=>{
+      const p = products.find(pr=>pr.id===id);
+      return sum + p.price*cart[id];
+    },0);
+    document.getElementById('drawerTotal').textContent = total.toFixed(2)+' $';
+  }
+
+  function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open');}
+  function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+
+  async function checkout(){
+    if(Object.keys(cart).length===0){alert('Votre panier est vide.');return;}
+    const btn = document.querySelector('.checkout-btn');
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Redirection vers le paiement…';
+    try {
+      const items = Object.keys(cart).map(id => ({ id, qty: cart[id] }));
+      const res = await fetch('/.netlify/functions/create-checkout-session', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ items })
+      });
+      const data = await res.json();
+      if(res.ok && data.url){
+        window.location.href = data.url;
+      } else {
+        alert('Erreur au moment du paiement : ' + (data.error || 'veuillez réessayer.'));
+        btn.disabled = false;
+        btn.textContent = originalLabel;
+      }
+    } catch(err){
+      alert('Impossible de contacter le service de paiement. Veuillez réessayer.');
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  }
+
+  renderProducts();
+  renderZones();
+  updateCartUI();
+</script>
+
+</body>
+</html>
