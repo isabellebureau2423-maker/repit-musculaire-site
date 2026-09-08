@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Répit Musculaire — Savons &amp; soins naturels pour muscles</title>
+<title>Répit Musculaire — Savons &amp; soins naturels pour muscles et articulations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --stone:#EAE2D3;
-    --paper:#F7F2E6;
-    --ink:#2B2620;
-    --ink-soft:#5A5246;
-    --pine:#3F5A44;
-    --pine-deep:#28372C;
-    --ochre:#B8863B;
-    --ochre-deep:#8F6A2E;
-    --menthol:#B9D3BC;
-    --line: rgba(43,38,32,0.16);
+    --stone:linear-gradient(155deg, #8FC0D8 0%, #D0AEE2 100%);
+    --paper:linear-gradient(155deg, #E8B87A 0%, #E8A5BE 33%, #8FC0D8 66%, #D0AEE2 100%);
+    --ink:#2A2530;
+    --ink-soft:#4A4550;
+    --pine:#2C5268;
+    --pine-deep:#1F3F52;
+    --ochre:#F5C99A;
+    --ochre-deep:#603A18;
+    --menthol:#553069;
+    --pink:#F3CEDA;
+    --pink-deep:#6F2745;
+    --btn-text:#FBF9FA;
+    --line: rgba(59,53,66,0.16);
     --radius: 2px;
   }
   *{box-sizing:border-box;}
@@ -77,7 +80,7 @@
   nav.links a:hover{color:var(--pine-deep);}
   .cart-btn{
     display:flex;align-items:center;gap:8px;
-    background:var(--pine-deep);color:var(--paper);
+    background:var(--pine-deep);color:var(--btn-text);
     border:none;border-radius:var(--radius);
     padding:10px 16px;font-size:0.85rem;letter-spacing:0.02em;
   }
@@ -95,11 +98,11 @@
     align-items:center;padding:88px 0 96px;
   }
   .hero h1{font-size:3rem;line-height:1.12;margin:18px 0 22px;color:var(--pine-deep);}
-  .hero h1 em{font-style:italic;color:var(--ochre-deep);}
+  .hero h1 em{font-style:italic;color:var(--pink-deep);}
   .hero p.lead{font-size:1.08rem;color:var(--ink-soft);max-width:46ch;margin-bottom:34px;}
   .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
   .btn-primary{
-    background:var(--pine-deep);color:var(--paper);border:none;
+    background:var(--pine-deep);color:var(--btn-text);border:none;
     padding:14px 26px;font-size:0.95rem;border-radius:var(--radius);
   }
   .btn-primary:hover{background:var(--pine);}
@@ -139,7 +142,7 @@
   .product-media{
     aspect-ratio:4/3;border-bottom:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(155deg,#EFE8D8,#E4DAC4);
+    background:linear-gradient(155deg,#DCEAF0,#F3D9E4);
   }
   .product-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;}
   .product-tag{font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ochre-deep);margin-bottom:8px;}
@@ -151,55 +154,42 @@
     background:transparent;border:1px solid var(--pine-deep);color:var(--pine-deep);
     padding:9px 14px;font-size:0.8rem;border-radius:var(--radius);
   }
-  .add-btn:hover{background:var(--pine-deep);color:var(--paper);}
+  .add-btn:hover{background:var(--pine-deep);color:var(--btn-text);}
   .add-btn.added{background:var(--ochre);border-color:var(--ochre);color:var(--pine-deep);}
 
-  /* ---------- CONSEILS ---------- */
-  .zone-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;}
-  .zone-tab{
-    background:transparent;border:1px solid var(--line);color:var(--ink-soft);
-    padding:10px 18px;font-size:0.86rem;border-radius:20px;
+  .usage-details{margin-top:14px;border-top:1px solid var(--line);padding-top:12px;}
+  .usage-details summary{
+    font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--ink-soft);cursor:pointer;list-style:none;
+    display:flex;align-items:center;justify-content:space-between;
   }
-  .zone-tab.active{background:var(--pine-deep);border-color:var(--pine-deep);color:var(--paper);}
-  .zone-panel{display:none;grid-template-columns:1fr 1fr;gap:48px;}
-  .zone-panel.active{display:grid;}
-  .zone-panel h3{font-size:1.5rem;color:var(--pine-deep);margin-bottom:6px;}
-  .zone-sub{color:var(--ink-soft);font-size:0.92rem;margin-bottom:22px;}
-  .tip-list{list-style:none;padding:0;margin:0;}
-  .tip-list li{
-    display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);
-  }
-  .tip-num{
-    font-family:'IBM Plex Mono',monospace;color:var(--ochre-deep);font-size:0.85rem;
-    flex-shrink:0;padding-top:2px;
-  }
-  .zone-reco{
-    background:var(--paper);border:1px solid var(--line);padding:22px;align-self:start;
-  }
-  .zone-reco .eyebrow{margin-bottom:10px;}
-  .zone-reco h4{font-family:'Spectral',serif;font-style:italic;font-size:1.15rem;color:var(--pine-deep);margin-bottom:8px;}
-  .zone-reco p{font-size:0.88rem;color:var(--ink-soft);}
-  .caution{
-    margin-top:44px;padding:18px 22px;border-left:3px solid var(--ochre);
-    background:var(--paper);font-size:0.86rem;color:var(--ink-soft);
-  }
+  .usage-details summary::-webkit-details-marker{display:none;}
+  .usage-details summary::after{content:'+';font-size:1rem;color:var(--ochre-deep);}
+  .usage-details[open] summary::after{content:'–';}
+  .usage-details summary:hover{color:var(--pine-deep);}
+  .usage-body{padding-top:12px;font-size:0.83rem;color:var(--ink-soft);}
+  .usage-body p{margin:0 0 8px;}
+  .usage-body strong{color:var(--ink);font-weight:700;}
+  .usage-body ul{margin:0;padding-left:18px;}
+  .usage-body li{margin-bottom:4px;}
+
 
   /* ---------- ABOUT ---------- */
   .about{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
   .about p{color:var(--ink-soft);margin-top:16px;}
 
   /* ---------- FOOTER ---------- */
-  footer{background:var(--pine-deep);color:var(--paper);padding:56px 0 28px;}
+  footer{background:linear-gradient(155deg, #8FC0D8 0%, #D0AEE2 100%);color:var(--ink);padding:56px 0 28px;}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px;}
-  footer .wordmark{color:var(--paper);}
+  footer .wordmark{color:var(--ink);}
   footer .wordmark small{color:var(--menthol);}
   footer h4{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--menthol);margin-bottom:14px;}
   footer ul{list-style:none;padding:0;margin:0;}
-  footer li{margin-bottom:10px;font-size:0.9rem;color:#D8DED9;}
-  .foot-bottom{border-top:1px solid rgba(247,242,230,0.15);padding-top:22px;font-size:0.78rem;color:#9FB0A2;font-family:'IBM Plex Mono',monospace;}
+  footer li{margin-bottom:10px;font-size:0.9rem;color:#4A4550;}
+  .foot-bottom{border-top:1px solid rgba(59,53,66,0.15);padding-top:22px;font-size:0.78rem;color:#4F4A5A;font-family:'IBM Plex Mono',monospace;}
 
   /* ---------- CART DRAWER ---------- */
-  .overlay{position:fixed;inset:0;background:rgba(43,38,32,0.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:90;}
+  .overlay{position:fixed;inset:0;background:rgba(10,8,12,0.55);opacity:0;pointer-events:none;transition:opacity .25s;z-index:90;}
   .overlay.open{opacity:1;pointer-events:auto;}
   .drawer{
     position:fixed;top:0;right:0;height:100%;width:380px;max-width:88vw;
@@ -218,16 +208,15 @@
   .drawer-empty{color:var(--ink-soft);font-size:0.9rem;padding:20px 0;}
   .drawer-foot{padding:22px 24px;border-top:1px solid var(--line);}
   .drawer-total{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;margin-bottom:16px;font-size:1rem;}
-  .checkout-btn{width:100%;background:var(--pine-deep);color:var(--paper);border:none;padding:15px;border-radius:var(--radius);font-size:0.95rem;}
+  .checkout-btn{width:100%;background:var(--pine-deep);color:var(--btn-text);border:none;padding:15px;border-radius:var(--radius);font-size:0.95rem;}
   .checkout-btn:hover{background:var(--pine);}
   .checkout-note{font-size:0.72rem;color:var(--ink-soft);margin-top:10px;text-align:center;}
 
   @media (max-width:880px){
-    .hero, .about{grid-template-columns:1fr;}
+    .hero{grid-template-columns:1fr;}
     .hero{padding:56px 0 64px;gap:40px;}
     .hero h1{font-size:2.2rem;}
     .grid{grid-template-columns:1fr 1fr;}
-    .zone-panel.active{display:flex;flex-direction:column;}
     nav.links{display:none;}
     .foot-grid{grid-template-columns:1fr;}
   }
@@ -244,8 +233,6 @@
     <div class="wordmark">Répit Musculaire <small>Savons &amp; soins</small></div>
     <nav class="links">
       <a href="#boutique">Boutique</a>
-      <a href="#conseils">Conseils</a>
-      <a href="#apropos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="cart-btn" onclick="openDrawer()">
@@ -260,25 +247,24 @@
     <div>
       <div class="eyebrow">Savons &amp; baumes faits main</div>
       <h1>Le repos que vos <em>muscles</em><br>attendaient.</h1>
-      <p class="lead">Des savons et baumes formulés à partir de plantes reconnues pour soulager la tension musculaire — gaulthérie, arnica, eucalyptus — pensés par une professionnelle du soulagement de la douleur.</p>
+      <p class="lead">Des savons et baumes formulés à partir de plantes reconnues pour soulager la tension musculaire et l'inconfort articulaire — gaulthérie, arnica, eucalyptus — pensés par une professionnelle du soulagement de la douleur.</p>
       <div class="cta-row">
         <a href="#boutique" class="btn-primary" style="text-decoration:none;display:inline-block;">Voir la boutique</a>
-        <a href="#conseils" class="btn-ghost">Conseils par zone</a>
       </div>
     </div>
     <div class="specimen-plate">
       <div class="eyebrow"><span>Fiche spécimen</span><span>N° 01</span></div>
       <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
-        <rect x="60" y="40" width="200" height="120" rx="6" fill="#EDE3CB" stroke="#2B2620" stroke-width="1.2"/>
-        <path d="M60 100 Q160 80 260 100" stroke="#8F6A2E" stroke-width="1" fill="none" opacity="0.5"/>
-        <path d="M100 40 C95 20 110 8 118 22 C126 8 141 20 136 40 Z" fill="#3F5A44"/>
-        <path d="M180 40 C175 20 190 8 198 22 C206 8 221 20 216 40 Z" fill="#3F5A44"/>
-        <circle cx="130" cy="95" r="3" fill="#B8863B"/>
-        <circle cx="150" cy="110" r="3" fill="#B8863B"/>
-        <circle cx="175" cy="90" r="3" fill="#B8863B"/>
-        <circle cx="195" cy="115" r="3" fill="#B8863B"/>
-        <line x1="60" y1="170" x2="260" y2="170" stroke="#2B2620" stroke-width="0.6"/>
-        <line x1="60" y1="180" x2="260" y2="180" stroke="#2B2620" stroke-width="0.6"/>
+        <rect x="60" y="40" width="200" height="120" rx="6" fill="#F1EEF5" stroke="#3B3542" stroke-width="1.2"/>
+        <path d="M60 100 Q160 80 260 100" stroke="#C97B3E" stroke-width="1" fill="none" opacity="0.5"/>
+        <path d="M100 40 C95 20 110 8 118 22 C126 8 141 20 136 40 Z" fill="#4A6B80"/>
+        <path d="M180 40 C175 20 190 8 198 22 C206 8 221 20 216 40 Z" fill="#4A6B80"/>
+        <circle cx="130" cy="95" r="3" fill="#D97FA0"/>
+        <circle cx="150" cy="110" r="3" fill="#D97FA0"/>
+        <circle cx="175" cy="90" r="3" fill="#D97FA0"/>
+        <circle cx="195" cy="115" r="3" fill="#D97FA0"/>
+        <line x1="60" y1="170" x2="260" y2="170" stroke="#3B3542" stroke-width="0.6"/>
+        <line x1="60" y1="180" x2="260" y2="180" stroke="#3B3542" stroke-width="0.6"/>
       </svg>
       <div class="specimen-caption">Gaulthérie couchée — effraîchissante, anti-tension</div>
     </div>
@@ -288,63 +274,22 @@
 <!-- ================= BOUTIQUE ================= -->
 <section id="boutique" class="alt">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Boutique</div>
-      <h2>Chaque pièce, une intention.</h2>
-      <p>Neuf savons et baumes, chacun composé pour une zone ou un besoin précis. Fabriqués en petits lots.</p>
-    </div>
     <div class="grid" id="productGrid"></div>
   </div>
 </section>
 
-<!-- ================= CONSEILS ================= -->
-<section id="conseils">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Conseils</div>
-      <h2>Soulager la douleur, zone par zone.</h2>
-      <p>Des gestes simples à faire chez soi, en complément de nos soins — et à quel moment consulter.</p>
-    </div>
-    <div class="zone-tabs" id="zoneTabs"></div>
-    <div id="zonePanels"></div>
-    <div class="caution">Ces conseils sont généraux et ne remplacent pas l'avis d'un professionnel de la santé. Si la douleur est intense, persiste au-delà de quelques semaines, ou s'accompagne d'engourdissement, de fièvre ou d'une perte de force, consultez un professionnel.</div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="alt" id="apropos">
-  <div class="wrap about">
-    <div class="specimen-plate">
-      <div class="eyebrow"><span>Fiche spécimen</span><span>N° 00</span></div>
-      <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
-        <rect x="70" y="30" width="180" height="150" rx="4" fill="#EDE3CB" stroke="#2B2620" stroke-width="1.2"/>
-        <path d="M100 150 C100 100 140 70 160 70 C180 70 220 100 220 150" stroke="#3F5A44" stroke-width="2" fill="none"/>
-        <path d="M160 70 L160 150" stroke="#3F5A44" stroke-width="1"/>
-        <circle cx="160" cy="60" r="8" fill="#3F5A44"/>
-      </svg>
-      <div class="specimen-caption">Formulée à la main, un lot à la fois</div>
-    </div>
-    <div>
-      <div class="eyebrow">À propos</div>
-      <h2 style="font-size:2rem;color:var(--pine-deep);margin-top:10px;">Une approche de terrain, pas de laboratoire.</h2>
-      <p>Répit Musculaire est né du travail quotidien d'une massothérapeute et kinésiologue du sport, à force de voir les mêmes tensions revenir : nuque raide après une journée d'écran, mollets durs après la course, bas du dos qui tire en fin de journée.</p>
-      <p>Chaque savon et chaque baume est formulé pour prolonger, à la maison, ce qu'on ressent après une bonne séance : la chaleur qui détend, le geste qui relâche.</p>
-    </div>
-  </div>
-</section>
-
 <footer id="contact">
+
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <div class="wordmark">Répit Musculaire</div>
-        <p style="color:#C7CFC8;font-size:0.88rem;margin-top:14px;max-width:34ch;">Savons et baumes faits main pour soulager la tension musculaire, formulés à partir d'ingrédients naturels.</p>
+        <p style="color:#4A4550;font-size:0.88rem;margin-top:14px;max-width:34ch;">Savons et baumes faits main pour soulager la tension musculaire et l'inconfort articulaire, formulés à partir d'ingrédients naturels.</p>
       </div>
       <div>
         <h4>Boutique</h4>
         <ul>
           <li><a href="#boutique">Tous les produits</a></li>
-          <li><a href="#conseils">Conseils par zone</a></li>
         </ul>
       </div>
       <div>
@@ -376,75 +321,66 @@
 
 <script>
   const products = [
-    {id:'p1', name:'Savon Gaulthérie &amp; Menthol', tag:'Dos · Épaules', price:14.50, benefit:"Effet rafraîchissant immédiat sur les tensions du haut du dos et de la nuque."},
-    {id:'p2', name:'Savon Arnica &amp; Lavande', tag:'Courbatures générales', price:13.00, benefit:"Apaise les courbatures diffuses après une longue journée ou un effort inhabituel."},
-    {id:'p3', name:'Savon Eucalyptus &amp; Romarin', tag:'Jambes lourdes', price:13.50, benefit:"Stimule la circulation, idéal en fin de journée debout ou après la course."},
-    {id:'p4', name:'Baume Chaud Gingembre &amp; Poivre', tag:'Articulations', price:18.00, benefit:"Chaleur profonde pour les articulations raides, hanches et genoux."},
-    {id:'p5', name:'Baume Froid Menthol &amp; Camphre', tag:'Inflammation', price:18.00, benefit:"Effet glaçant pour calmer une zone chaude ou récemment sollicitée."},
-    {id:'p6', name:'Savon Sel d’Épsom &amp; Genévrier', tag:'Récupération sportive', price:15.00, benefit:"Pensé pour les jambes et le dos après l'entraînement."},
-    {id:'p7', name:'Huile de massage Arnica', tag:'Zones sensibles', price:22.00, benefit:"Texture glissante pour l'auto-massage des zones sensibles ou noueuses."},
-    {id:'p8', name:'Savon Curcuma &amp; Bois de Santal', tag:'Tension musculaire', price:14.00, benefit:"Un geste chaud et enveloppant pour relâcher une tension tenace."},
-    {id:'p9', name:'Baume Nuque &amp; Épaules', tag:'Écrans &amp; posture', price:17.50, benefit:"Formulé pour la raideur causée par de longues heures à l'écran."}
-  ];
-
-  const zones = [
-    {
-      id:'nuque', label:'Nuque & épaules', sub:'Tension liée aux écrans, au stress ou à une mauvaise posture assise.',
-      tips:[
-        "Rouler lentement les épaules vers l'arrière, 10 répétitions, en expirant à chaque descente.",
-        "Masser la base du crâne avec les pouces, petits cercles, pendant environ une minute.",
-        "Pencher la tête vers une épaule et retenir 20 secondes de chaque côté, sans forcer.",
-        "Éviter de coincer le téléphone entre l'oreille et l'épaule — répartir le poids autrement."
-      ],
-      product:'Savon Gaulthérie &amp; Menthol', productNote:"Sa fraîcheur aide à relâcher la nuque juste avant les étirements."
-    },
-    {
-      id:'dos', label:'Dos', sub:'Raideur du haut du dos et tiraillement dans le bas du dos en fin de journée.',
-      tips:[
-        "Balle de massage contre un mur, sous chaque omoplate, 30 secondes par point.",
-        "Étirement chat-vache à quatre pattes, 8 à 10 répétitions lentes.",
-        "Appliquer un baume chaud avant l'étirement pour assouplir les tissus.",
-        "Éviter les torsions brusques du tronc quand les muscles sont encore froids."
-      ],
-      product:'Baume Chaud Gingembre &amp; Poivre', productNote:"À masser en cercles sur le bas du dos avant l'étirement du matin."
-    },
-    {
-      id:'hanches', label:'Hanches & fessiers', sub:'Fréquent après de longues heures assises ou un effort de course.',
-      tips:[
-        "Étirement du pigeon assis, 30 secondes de chaque côté.",
-        "Rouler une balle sous les fessiers en position assise, mouvements lents.",
-        "Marcher quelques minutes après une longue période assise pour relancer la zone."
-      ],
-      product:'Savon Arnica &amp; Lavande', productNote:"Utile en douche après une séance d'assouplissement des hanches."
-    },
-    {
-      id:'jambes', label:'Jambes & mollets', sub:'Jambes lourdes en fin de journée ou après l’effort physique.',
-      tips:[
-        "Étirement du mollet contre un mur, jambe arrière tendue, 30 secondes par côté.",
-        "Rouleau de massage sur les mollets et l'arrière des cuisses, mouvements lents vers le haut.",
-        "Surélever les jambes contre un mur 5 à 10 minutes en soirée pour la circulation.",
-        "Bain de pieds tiède additionné de sel d'Epsom après un effort important."
-      ],
-      product:'Savon Eucalyptus &amp; Romarin', productNote:"Formulé pour stimuler la circulation dans les jambes fatiguées."
-    },
-    {
-      id:'pieds', label:'Pieds', sub:'Voûte plantaire tendue, souvent liée à la station debout prolongée.',
-      tips:[
-        "Rouler une balle sous la voûte plantaire, assis, 1 à 2 minutes par pied.",
-        "Étirer les orteils vers soi à la main, 15 à 20 secondes.",
-        "Alterner brièvement eau chaude et eau fraîche pour stimuler la circulation."
-      ],
-      product:'Savon Sel d’Épsom &amp; Genévrier', productNote:"En bain de pieds le soir, après une journée debout."
-    },
-    {
-      id:'mains', label:'Mains & avant-bras', sub:'Tension liée au clavier, à la souris ou aux tâches répétitives.',
-      tips:[
-        "Étirer le poignet vers le bas puis vers le haut, 15 secondes par position.",
-        "Masser la paume avec le pouce de l'autre main, en petits cercles.",
-        "Faire une pause toutes les heures lors de tâches répétitives prolongées."
-      ],
-      product:'Huile de massage Arnica', productNote:"Idéale pour un massage rapide des avant-bras en fin de journée."
-    }
+    {id:'p1', name:'Savon Gaulthérie &amp; Menthol', tag:'Dos · Épaules', price:14.50, benefit:"Effet rafraîchissant immédiat sur les tensions du haut du dos et de la nuque.",
+      usage:"Savonnez la zone tendue sous la douche en massant légèrement, laissez agir quelques secondes puis rincez à l'eau tiède.",
+      conservation:"Conservez dans un porte-savon aéré, à l'abri de l'humidité constante. Se conserve environ 6 mois.",
+      precautions:["Contient des huiles essentielles de gaulthérie et de menthol — éviter tout contact avec les yeux et les muqueuses.","Déconseillé aux enfants de moins de 6 ans, aux femmes enceintes ou allaitantes.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p2', name:'Savon Arnica &amp; Lavande', tag:'Courbatures générales', price:13.00, benefit:"Apaise les courbatures diffuses après une longue journée ou un effort inhabituel.",
+      usage:"Utilisez en douche comme un savon régulier, en insistant par un massage doux sur les zones courbaturées.",
+      conservation:"À l'abri de la lumière directe et de l'humidité, environ 6 mois.",
+      precautions:["Contient de l'huile essentielle de lavande — éviter le contact avec les yeux.","Déconseillé aux enfants de moins de 3 ans.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p3', name:'Savon Eucalyptus &amp; Romarin', tag:'Jambes lourdes', price:13.50, benefit:"Stimule la circulation, idéal en fin de journée debout ou après la course.",
+      usage:"Massez en cercles sur les jambes sous la douche, du bas vers le haut.",
+      conservation:"À l'abri de la chaleur et de l'humidité, environ 6 mois.",
+      precautions:["Contient des huiles essentielles d'eucalyptus et de romarin — déconseillé aux femmes enceintes ou allaitantes et aux enfants de moins de 6 ans.","Éviter le contact avec les yeux.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p4', name:'Baume Chaud Gingembre &amp; Poivre', tag:'Articulations', price:18.00, benefit:"Chaleur profonde pour les articulations raides, hanches et genoux.",
+      usage:"Appliquez une petite quantité en massage circulaire sur l'articulation ou la zone raide, 1 à 2 fois par jour. Lavez-vous les mains après application.",
+      conservation:"À l'abri de la lumière et de la chaleur, environ 6 mois après ouverture.",
+      precautions:["Ne pas appliquer sur une peau lésée ou irritée.","Effet chauffant — éviter tout contact avec les yeux, le visage et les muqueuses.","Déconseillé aux femmes enceintes ou allaitantes et aux jeunes enfants.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p5', name:'Baume Froid Menthol &amp; Camphre', tag:'Inflammation', price:18.00, benefit:"Effet glaçant pour calmer une zone chaude ou récemment sollicitée.",
+      usage:"Appliquez en fine couche sur la zone concernée, sans masser vigoureusement si l'inflammation est marquée.",
+      conservation:"À l'abri de la lumière et de la chaleur, environ 6 mois après ouverture.",
+      precautions:["Ne pas appliquer sur des plaies ouvertes ou une peau lésée.","Contient du camphre et du menthol — déconseillé aux enfants de moins de 7 ans, aux femmes enceintes ou allaitantes.","Éviter le contact avec les yeux et les muqueuses.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p6', name:'Savon Sel d’Épsom &amp; Genévrier', tag:'Récupération sportive', price:15.00, benefit:"Pensé pour les jambes et le dos après l'entraînement.",
+      usage:"Utilisez en douche, ou en bain de pieds dissous dans l'eau tiède après un effort physique.",
+      conservation:"À l'abri de l'humidité, environ 6 mois.",
+      precautions:["Contient de l'huile essentielle de genévrier — déconseillé aux femmes enceintes ou allaitantes.","Éviter le contact avec les yeux.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p7', name:'Huile de massage Arnica', tag:'Zones sensibles', price:22.00, benefit:"Texture glissante pour l'auto-massage des zones sensibles ou noueuses.",
+      usage:"Appliquez quelques gouttes de cette huile en massages circulaires sur les zones douloureuses ou tendues (muscles endoloris, coups, bleus).",
+      conservation:"Conservez votre flacon à l'abri de la lumière et de la chaleur. Il se conservera environ 6 mois.",
+      precautions:["Ne pas appliquer sur des plaies ouvertes, une peau lésée ou les muqueuses.","Déconseillé aux femmes enceintes ou allaitantes ainsi qu'aux jeunes enfants, en raison de la présence d'huiles essentielles (notamment la gaulthérie).","Faites toujours un test de tolérance."]},
+    {id:'p8', name:'Savon Lavande', tag:'Détente complète du corps', price:13.50, benefit:"Un moment de détente complète pour tout le corps, idéal en fin de journée.",
+      usage:"Utilisez en douche ou en bain relaxant, sur tout le corps, de préférence en soirée.",
+      conservation:"À l'abri de la lumière et de l'humidité, environ 6 mois.",
+      precautions:["Contient de l'huile essentielle de lavande — éviter le contact avec les yeux.","Déconseillé aux enfants de moins de 3 ans.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p9', name:'Baume Nuque &amp; Épaules', tag:'Écrans &amp; posture', price:17.50, benefit:"Formulé pour la raideur causée par de longues heures à l'écran.",
+      usage:"Appliquez une petite noisette sur la nuque et les épaules, massez doucement jusqu'à absorption. Lavez-vous les mains ensuite.",
+      conservation:"À l'abri de la lumière et de la chaleur, environ 6 mois après ouverture.",
+      precautions:["Concentration plus élevée en gaulthérie — déconseillé aux enfants de moins de 12 ans, aux femmes enceintes ou allaitantes, et aux personnes allergiques à l'aspirine.","Éviter le contact avec les yeux et les muqueuses.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p10', name:'Savon Gingembre &amp; Poivre Noir', tag:'Échauffement articulaire', price:14.50, benefit:"Un savon chauffant en douceur, idéal avant un effort pour échauffer les articulations.",
+      usage:"Utilisez en douche sur les articulations à échauffer (genoux, épaules, mains) avant un effort physique.",
+      conservation:"À l'abri de la chaleur et de l'humidité, environ 6 mois.",
+      precautions:["Contient de l'huile essentielle de poivre noir — éviter le contact avec les yeux.","Déconseillé aux femmes enceintes ou allaitantes et aux jeunes enfants.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p11', name:'Savon Camphre &amp; Pin Sylvestre', tag:'Articulations raides', price:14.00, benefit:"Un geste frais et pénétrant pour les articulations raides au réveil.",
+      usage:"Massez délicatement les articulations raides sous la douche, de préférence le matin.",
+      conservation:"À l'abri de la lumière et de l'humidité, environ 6 mois.",
+      precautions:["Contient du camphre et de l'huile essentielle de pin sylvestre — déconseillé aux enfants de moins de 7 ans, aux femmes enceintes ou allaitantes.","Éviter le contact avec les yeux et les muqueuses.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p12', name:'Savon Romarin &amp; Genièvre', tag:'Mains &amp; poignets', price:13.00, benefit:"Pensé pour les mains et poignets sollicités par des gestes répétitifs.",
+      usage:"Lavez et massez doucement les mains et poignets, en insistant sur les articulations des doigts.",
+      conservation:"À l'abri de l'humidité, environ 6 mois.",
+      precautions:["Contient des huiles essentielles de romarin et de genièvre — déconseillé aux femmes enceintes ou allaitantes.","Éviter le contact avec les yeux.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p13', name:'Savon Menthe Poivrée &amp; Eucalyptus', tag:'Genoux &amp; chevilles', price:13.50, benefit:"Fraîcheur ciblée pour les genoux et chevilles après la marche ou la course.",
+      usage:"Massez en douche sur les genoux et chevilles, du bas vers le haut.",
+      conservation:"À l'abri de la chaleur et de l'humidité, environ 6 mois.",
+      precautions:["Contient de l'huile essentielle de menthe poivrée — déconseillé aux enfants de moins de 6 ans, aux femmes enceintes ou allaitantes.","Éviter le contact avec les yeux.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p14', name:'Baume Arnica &amp; Harpagophytum', tag:'Genoux &amp; arthrose', price:19.50, benefit:"Formulé pour accompagner les genoux sensibles et l'inconfort articulaire persistant.",
+      usage:"Appliquez en massage doux sur l'articulation concernée, 1 à 2 fois par jour.",
+      conservation:"À l'abri de la lumière et de la chaleur, environ 6 mois après ouverture.",
+      precautions:["Ne pas appliquer sur une peau lésée ou irritée.","Déconseillé aux femmes enceintes ou allaitantes.","Ne remplace pas un suivi médical pour une condition articulaire diagnostiquée.","Faites un test de tolérance avant la première utilisation."]},
+    {id:'p15', name:'Baume Chauffant Camphre &amp; Eucalyptus', tag:'Mains &amp; doigts', price:17.00, benefit:"Un baume chauffant en petit format, pensé pour les mains et les doigts.",
+      usage:"Appliquez une petite quantité sur les mains et doigts, massez jusqu'à absorption complète.",
+      conservation:"À l'abri de la lumière et de la chaleur, environ 6 mois après ouverture.",
+      precautions:["Effet chauffant — éviter tout contact avec les yeux et le visage après application.","Se laver les mains après application, avant de toucher le visage ou les yeux.","Déconseillé aux femmes enceintes ou allaitantes et aux jeunes enfants.","Faites un test de tolérance avant la première utilisation."]}
   ];
 
   let cart = {}; // {id: qty}
@@ -462,36 +398,18 @@
             <span class="price">${p.price.toFixed(2)} $</span>
             <button class="add-btn" id="btn-${p.id}" onclick="addToCart('${p.id}')">Ajouter</button>
           </div>
+          <details class="usage-details" open>
+            <summary>Utilisation &amp; précautions</summary>
+            <div class="usage-body">
+              <p><strong>Utilisation :</strong> ${p.usage}</p>
+              <p><strong>Conservation :</strong> ${p.conservation}</p>
+              <p><strong>Précautions :</strong></p>
+              <ul>${p.precautions.map(pr=>`<li>${pr}</li>`).join('')}</ul>
+            </div>
+          </details>
         </div>
       </div>
     `).join('');
-  }
-
-  function renderZones(){
-    const tabsEl = document.getElementById('zoneTabs');
-    const panelsEl = document.getElementById('zonePanels');
-    tabsEl.innerHTML = zones.map((z,i) => `<button class="zone-tab ${i===0?'active':''}" data-zone="${z.id}" onclick="showZone('${z.id}')">${z.label}</button>`).join('');
-    panelsEl.innerHTML = zones.map((z,i) => `
-      <div class="zone-panel ${i===0?'active':''}" id="panel-${z.id}">
-        <div>
-          <h3>${z.label}</h3>
-          <div class="zone-sub">${z.sub}</div>
-          <ul class="tip-list">
-            ${z.tips.map((t,idx)=>`<li><span class="tip-num">${String(idx+1).padStart(2,'0')}</span><span>${t}</span></li>`).join('')}
-          </ul>
-        </div>
-        <div class="zone-reco">
-          <div class="eyebrow">Soin recommandé</div>
-          <h4>${z.product}</h4>
-          <p>${z.productNote}</p>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  function showZone(id){
-    document.querySelectorAll('.zone-tab').forEach(b=>b.classList.toggle('active', b.dataset.zone===id));
-    document.querySelectorAll('.zone-panel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+id));
   }
 
   function addToCart(id){
@@ -565,7 +483,6 @@
   }
 
   renderProducts();
-  renderZones();
   updateCartUI();
 </script>
 
